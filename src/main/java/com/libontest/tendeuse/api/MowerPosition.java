@@ -1,9 +1,11 @@
 package com.libontest.tendeuse.api;
 
 import com.libontest.tendeuse.enums.Orientation;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class MowerPosition {
 
   private Integer x;

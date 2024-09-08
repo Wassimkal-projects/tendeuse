@@ -5,15 +5,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.libontest.tendeuse.enums.Instruction;
 import com.libontest.tendeuse.enums.Orientation;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class MowerRequestApi {
 
   private Field field;
   private List<Mower> mowers;
 
   @Data
+  @Builder
   public static class Mower {
 
     private String id;

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("tendeuse")
-public class TendeuseController {
+@RequestMapping("mower")
+public class MowerController {
 
   private final MowerService mowerService;
 
