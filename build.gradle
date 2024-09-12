@@ -25,6 +25,10 @@ dependencies {
     //Lombok dependencies
     compileOnly 'org.projectlombok:lombok:1.18.34'
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    //Validation
+    implementation "org.springframework.boot:spring-boot-starter-validation:3.3.3"
+
 }
 
 tasks.named('test') {

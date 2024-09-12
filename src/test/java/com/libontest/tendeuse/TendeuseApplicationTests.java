@@ -13,7 +13,6 @@ import com.libontest.tendeuse.api.MowerOutputApi;
 import com.libontest.tendeuse.api.MowerPosition;
 import com.libontest.tendeuse.api.MowerRequestApi;
 import com.libontest.tendeuse.api.MowerRequestApi.Mower;
-import com.libontest.tendeuse.services.MowerService;
 import java.util.List;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,9 +29,6 @@ class TendeuseApplicationTests {
 
   @Autowired
   private TestRestTemplate restTemplate;
-
-  @Autowired
-  private MowerService mowerService;
 
   @Autowired
   private ObjectMapper objectMapper;
