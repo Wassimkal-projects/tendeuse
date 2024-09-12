@@ -1,8 +1,11 @@
 package com.libontest.tendeuse.enums;
 
+import com.libontest.tendeuse.api.Field;
 import java.util.Map;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+@Getter
 @RequiredArgsConstructor
 public enum Orientation {
   N(0, 1),
@@ -12,14 +15,6 @@ public enum Orientation {
 
   private final Integer nextX;
   private final Integer nextY;
-
-  public Integer nextX(Integer current, Integer maxX) {
-    return current + nextX <= maxX ? current + nextX : current;
-  }
-
-  public Integer nextY(Integer current, Integer maxY) {
-    return current + nextY <= maxY ? current + nextY : current;
-  }
 
   public Orientation rotate(Instruction instruction) {
     if (Instruction.A.equals(instruction)) {
@@ -34,5 +29,9 @@ public enum Orientation {
     );
 
     return rotateMap.get(this);
+  }
+
+  public boolean willGoOutOfRangeIfAdvance(Integer x, Integer y, Field field) {
+    return x + this.nextX > field.getMaxX() || y + this.nextY > field.getMaxY();
   }
 }
